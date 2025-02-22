@@ -39,7 +39,7 @@ public class Main {
             KeyGenerator keyGen = KeyGenerator.getInstance("AES");
             keyGen.init(128, secureRandom); //se indica el tamaño de la clave
             clave = keyGen.generateKey(); //genera la clave privada
-            System.out.println("QUITAR : clave secreta AES: "+clave);
+            //System.out.println("clave secreta AES: "+clave);
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }
@@ -58,7 +58,7 @@ public class Main {
             Cipher cifrador = Cipher.getInstance("AES");
             //Se inicializa el cifrador en modo CIFRADO o ENCRIPTACIÓN
             cifrador.init(Cipher.ENCRYPT_MODE, claveSecreta);
-            System.out.println("Cifrar con AES el fichero: " + fichero + ", y dejar resultado en " + ficheroCifrado);
+            System.out.println("Cifrar el fichero con AES: " + ficheroCifrado);
             //declaración de objetos
             byte[] buffer = new byte[1000]; //array de bytes
             byte[] bufferCifrado;
