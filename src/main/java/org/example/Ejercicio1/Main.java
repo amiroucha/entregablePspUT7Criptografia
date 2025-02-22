@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Ejercicio1;
 
 import javax.crypto.*;
 import java.io.*;
@@ -50,8 +50,8 @@ public class Main {
     //El fichero encriptado lo deja en el archivo de nombre fichero.cifrado
     //en el mismo directorio
     public static void cifrarFichero(File fichero, String ficheroCifrado, SecretKey claveSecreta) {
-        FileInputStream fichEntrada = null; //fichero de entrada
-        FileOutputStream fichSalida = null; //fichero de salida
+        FileInputStream fichEntrada; //fichero de entrada
+        FileOutputStream fichSalida; //fichero de salida
         int bytesLeidos;
         try {
             //Se Crea el objeto Cipher para cifrar, utilizando el algoritmo AES
@@ -85,10 +85,10 @@ public class Main {
     }
 
     public static void descifrarFichero(String cifrado, String descifrado, SecretKey claveSecreta) {
-        FileInputStream fe = null; //fichero de entrada
-        FileOutputStream fs = null; //fichero de salida
+        FileInputStream fe; //fichero de entrada
+        FileOutputStream fs; //fichero de salida
         int bytesLeidos;
-        Cipher cifrador = null;
+        Cipher cifrador;
         try {
             cifrador = Cipher.getInstance("AES");
           // Poner cifrador en modo DESCIFRADO o DESENCRIPTACIÓN
