@@ -11,8 +11,8 @@ import java.util.Scanner;
 public class Main2 {
     public static Scanner leer = new Scanner(System.in);
     public static SecureRandom secureRandom = new SecureRandom();
-    public static String fichCifrado = "fichero1Cifrado.txt"; //nombre del fichero cifrado
-    public static String fichDescifrado = "fichero1Descifrado.txt";//nombre del fichero descifrado
+    public static String fichCifrado ; //nombre del fichero cifrado
+    public static String fichDescifrado;//nombre del fichero descifrado
 
     public static void main(String[] args) {
         System.out.println("Introduce un fichero existente");
@@ -25,6 +25,8 @@ public class Main2 {
             nombreFich = leer.nextLine();
             fichero =  new File(nombreFich);
         }
+        fichCifrado = "Cifrado-".concat(nombreFich);
+        fichDescifrado = "Descifrado-".concat(nombreFich);
 
         System.out.println("Introduce una semilla para cifrar");
         String semilla  = leer.nextLine();

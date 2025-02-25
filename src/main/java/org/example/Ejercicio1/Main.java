@@ -11,8 +11,8 @@ public class Main {
     public static Scanner leer = new Scanner(System.in);
     public static SecureRandom secureRandom = new SecureRandom();
     //Lo pongo aqui para que sea sencillo de modificar y no haya que buscar en el cod
-    public static String fichCifrado = "proyectoCifrado.zip";
-    public static String fichDescifrado = "proyectoDescifrado.zip";
+    public static String fichCifrado;
+    public static String fichDescifrado;
     //---------------------------------------------------------------
 
     public static void main(String[] args) {
@@ -26,6 +26,8 @@ public class Main {
             nombreFich = leer.nextLine();
             fichero =  new File(nombreFich);
         }
+        fichCifrado = "Cifrado-".concat(nombreFich);
+        fichDescifrado = "Descifrado-".concat(nombreFich);
 
         System.out.println("Introduce una semilla para cifrar");
         String semilla  = leer.nextLine();
